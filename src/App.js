@@ -1,0 +1,22 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './components/Login';
+import SignUp from './components/SignUp';
+import Home from './components/Home';
+import NewEntry from './components/NewEntry';
+import NewExit from './components/NewExit';
+
+function App(){
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route exact path='/' element={<Login />} />
+                <Route path='/sign-up' element={<SignUp />} />
+                <Route path='/home' element={<Home />}></Route>
+                <Route path='/new-entry' element={<NewEntry />} />
+                <Route path='/new-exit' element={<NewExit />}></Route>
+            </Routes>
+        </BrowserRouter>
+    )
+}
+
+export default App;

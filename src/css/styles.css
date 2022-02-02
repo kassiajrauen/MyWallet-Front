@@ -5,8 +5,12 @@
 }
 
 body{
-    background-color: #8C11BE;
-    font-family: 'Roboto', sans-serif;
+    background-color: #FFFFFF;
+    font-family: 'Raleway', sans-serif;
     height: 667px;
     width: 375px;
+}
+
+a{
+    text-decoration: none;
 }
