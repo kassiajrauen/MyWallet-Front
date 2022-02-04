@@ -20,17 +20,14 @@ const Container = styled.div`
           font-weight:700;
       }
   }
-
+  
   form {
     display: flex;
     flex-direction: column;
-    margin-top: 25px;
   }
-
   .info-submit{
-      display: column;
-      margin-top: 40px;
-      padding-left: 25px
+    display: column;
+    margin-top: 40px;
   }
 
   input {
