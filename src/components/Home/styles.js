@@ -34,6 +34,7 @@ const Container = styled.div`
     align-items: center;
     margin-top: 22px;
     margin-bottom: 14px;
+    flex-direction: column;
     
     span{
         text-align: center;
@@ -42,6 +43,22 @@ const Container = styled.div`
         color: #868686;
         font-size: 20px;
         font-weight: 400;
+
+        .date{
+            color: #C6C6C6;
+        }
+
+        .description{
+            color: #000000;
+        }
+
+        .value-entry{
+            color: #03AC00;
+        }
+
+        .value-exit{
+            color: #C70000;
+        }
     }
 }
 
