@@ -1,17 +1,22 @@
 import axios from 'axios';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import { Container } from './styles';
 import { useNavigate } from 'react-router-dom';
 import dayjs from 'dayjs';
+import TokenContext from "./contexts/TokenContext";
+import UserContext from "./contexts/UserContext";
 
 function Home(){
     const navigate = useNavigate();
     const [historic, setHistoric] = useState([]);
+    const {token} = useContext(TokenContext);
+    const {user} = useContext(UserContext);
 
     useEffect(() => {
-       axios.get('http://localhost:5000/home')
-        .then((response) => {
-            
+       axios.get('http://localhost:5000/home', {
+           headers: { Authorization: `Bearer ${token}`,}
+       })
+        .then((response) => {            
             setHistoric(response.data);
             console.log(response)
         })
@@ -23,7 +28,7 @@ function Home(){
     return(
         <Container>
             <div className="header">
-                <h1>Olá, Fulano</h1>
+                <h1>Olá, {user.name}</h1>
                 <img onClick={() => navigate('/')} src='../../assets/Exit.png' alt=""/>
             </div>
             <div className="historic">{

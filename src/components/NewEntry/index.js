@@ -1,12 +1,14 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Container } from './styles';
 import { useNavigate } from 'react-router-dom';
+import TokenContext from "../../contexts/TokenContext";
 
 function NewEntry(){
     const [value, setValue] = useState('');
     const [description, setDescription] = useState('');
     const [loading, setLoading] = useState(false);
+    const {token} = useContext(TokenContext);s
 
     const navigate = useNavigate();
 
@@ -14,7 +16,9 @@ function NewEntry(){
         setLoading(true);
         e.preventDefault();
 
-        const promise = axios.post('http://localhost:5000/new-entry', {value: value, description: description});
+        const promise = axios.post('http://localhost:5000/new-entry', {value: value, description: description}, {
+            headers: { Authorization: `Bearer ${token}`,}
+        });
         
         setTimeout(() => {
             promise.then(() => {

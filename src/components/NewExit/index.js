@@ -1,12 +1,14 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Container } from './styles';
 import { useNavigate } from 'react-router-dom';
+import TokenContext from "../../contexts/TokenContext";
 
 function NewExit(){
     const [value, setValue] = useState('');
     const [description, setDescription] = useState('');
     const [loading, setLoading] = useState(false);
+    const {token} = useContext(TokenContext);
 
     const navigate = useNavigate();
 
@@ -14,7 +16,9 @@ function NewExit(){
         setLoading(true);
         e.preventDefault();
 
-        const promise = axios.post('http://localhost:5000/new-exit', {value: value, description: description});
+        const promise = axios.post('http://localhost:5000/new-exit', {value: value, description: description}, {
+            headers: { Authorization: `Bearer ${token}`,}
+        });
         
         setTimeout(() => {
             promise.then(() => {
