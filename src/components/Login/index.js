@@ -18,7 +18,7 @@ function Login(){
         setLoading(true);
         e.preventDefault();
 
-        const promise = axios.post('http://localhost:5000/login', {email: email, password: password});
+        const promise = axios.post('https://back-my-wallet-k.herokuapp.com/login', {email: email, password: password});
         
         setTimeout(() => {
             promise.then(() => {
