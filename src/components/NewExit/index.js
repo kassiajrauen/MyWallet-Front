@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState, useContext } from 'react';
 import { Container } from './styles';
 import { useNavigate } from 'react-router-dom';
-import TokenContext from "../../contexts/TokenContext";
+import {TokenContext} from "../../contexts/TokenContext";
 
 function NewExit(){
     const [value, setValue] = useState('');

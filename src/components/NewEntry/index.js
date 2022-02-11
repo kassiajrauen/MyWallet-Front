@@ -2,13 +2,13 @@ import axios from 'axios';
 import React, { useState, useContext } from 'react';
 import { Container } from './styles';
 import { useNavigate } from 'react-router-dom';
-import TokenContext from "../../contexts/TokenContext";
+import {TokenContext} from "../../contexts/TokenContext";
 
 function NewEntry(){
     const [value, setValue] = useState('');
     const [description, setDescription] = useState('');
     const [loading, setLoading] = useState(false);
-    const {token} = useContext(TokenContext);s
+    const {token} = useContext(TokenContext);
 
     const navigate = useNavigate();
 

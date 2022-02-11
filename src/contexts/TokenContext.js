@@ -6,7 +6,7 @@ const TokenProvider = ({ children }) => {
   const [state, setState] = useState(false);
 
   return (
-    <TokenContext.Provider value={[state, setState]}>
+    <TokenContext.Provider value={{state, setState}}>
       {children}
     </TokenContext.Provider>
   );

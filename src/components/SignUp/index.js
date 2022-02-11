@@ -16,6 +16,8 @@ function SingUp(){
     setLoading(true);
     e.preventDefault();
     
+    console.log({name: name, email: email, password: password, confirmPassword: confirmPassword})
+
     const promise = axios.post('http://localhost:5000/sign-up', {name: name, email: email, password: password, confirmPassword: confirmPassword});
     setTimeout(() => {
         promise.then(() => {

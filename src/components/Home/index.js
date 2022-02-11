@@ -3,8 +3,8 @@ import React, {useEffect, useState, useContext} from 'react';
 import { Container } from './styles';
 import { useNavigate } from 'react-router-dom';
 import dayjs from 'dayjs';
-import TokenContext from "./contexts/TokenContext";
-import UserContext from "./contexts/UserContext";
+import {TokenContext} from "../../contexts/TokenContext";
+import {UserContext} from "../../contexts/UserContext";
 
 function Home(){
     const navigate = useNavigate();
